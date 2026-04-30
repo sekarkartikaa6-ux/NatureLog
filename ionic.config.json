@@ -1,0 +1,7 @@
+{
+  "name": "NatureLog",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
