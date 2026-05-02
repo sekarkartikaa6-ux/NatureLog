@@ -8,11 +8,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'pencarian',
+        path: 'lokasi',
         children: [
           {
             path: '',
-            loadChildren: () => import('../pencarian/pencarian.module').then(m => m.PencarianPageModule)
+            loadChildren: () => import('../lokasi/pencarian.module').then(m => m.PencarianPageModule)
           },
           {
             path: 'tambah',
@@ -34,7 +34,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'pencarian',
+        redirectTo: 'lokasi',
         pathMatch: 'full'
       }
     ]

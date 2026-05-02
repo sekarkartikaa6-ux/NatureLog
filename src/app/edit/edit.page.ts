@@ -111,6 +111,6 @@ export class EditPage implements OnInit {
       position: 'top'
     });
     await toast.present();
-    this.router.navigate(['/tabs/pencarian/detail', this.noteId]);
+    this.router.navigate(['/tabs/lokasi/detail', this.noteId]);
   }
 }

@@ -46,7 +46,7 @@ export class DetailPage implements OnInit {
 
   editNote() {
     if (this.note) {
-      this.router.navigate(['/tabs/pencarian/edit', this.note.id]);
+      this.router.navigate(['/tabs/lokasi/edit', this.note.id]);
     }
   }
 
@@ -69,7 +69,7 @@ export class DetailPage implements OnInit {
                 position: 'top'
               });
               await toast.present();
-              this.router.navigate(['/tabs/pencarian']);
+              this.router.navigate(['/tabs/lokasi']);
             }
           }
         }

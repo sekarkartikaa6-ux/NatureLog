@@ -57,10 +57,10 @@ export class PencarianPage {
   }
 
   viewDetail(id: string) {
-    this.router.navigate(['/tabs/pencarian/detail', id]);
+    this.router.navigate(['/tabs/lokasi/detail', id]);
   }
 
   addNote() {
-    this.router.navigate(['/tabs/pencarian/tambah']);
+    this.router.navigate(['/tabs/lokasi/tambah']);
   }
 }

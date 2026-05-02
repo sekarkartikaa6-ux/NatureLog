@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/pencarian" text="Kembali"></ion-back-button>
+      <ion-back-button defaultHref="/tabs/lokasi" text="Kembali"></ion-back-button>
     </ion-buttons>
     <ion-title>Tambah Catatan Baru</ion-title>
   </ion-toolbar>
@@ -11,7 +11,7 @@
   <div class="form-container">
 
     <div class="form-group">
-      <ion-label class="form-label">Nota</ion-label>
+      <ion-label class="form-label">Judul</ion-label>
       <ion-input
         [(ngModel)]="title"
         placeholder="Judul catatan..."
@@ -64,7 +64,7 @@
       <ion-label class="form-label">Deskripsi</ion-label>
       <ion-textarea
         [(ngModel)]="description"
-        placeholder="Deskripsi"
+        placeholder="Deskripsikan petualanganmu..."
         fill="outline"
         [autoGrow]="true"
         [rows]="4"

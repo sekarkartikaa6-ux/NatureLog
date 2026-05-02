@@ -92,10 +92,10 @@ export class TambahPage {
       position: 'top'
     });
     await toast.present();
-    this.router.navigate(['/tabs/pencarian']);
+    this.router.navigate(['/tabs/lokasi']);
   }
 
   goBack() {
-    this.router.navigate(['/tabs/pencarian']);
+    this.router.navigate(['/tabs/lokasi']);
   }
 }
