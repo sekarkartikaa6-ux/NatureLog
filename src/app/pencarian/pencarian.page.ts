@@ -59,4 +59,8 @@ export class PencarianPage {
   viewDetail(id: string) {
     this.router.navigate(['/tabs/dashboard/detail', id]);
   }
+
+  addNote() {
+    this.router.navigate(['/tabs/pencarian/tambah']);
+  }
 }

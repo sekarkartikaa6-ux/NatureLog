@@ -30,7 +30,16 @@ const routes: Routes = [
       },
       {
         path: 'pencarian',
-        loadChildren: () => import('../pencarian/pencarian.module').then(m => m.PencarianPageModule)
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pencarian/pencarian.module').then(m => m.PencarianPageModule)
+          },
+          {
+            path: 'tambah',
+            loadChildren: () => import('../tambah/tambah.module').then(m => m.TambahPageModule)
+          }
+        ]
       },
       {
         path: 'pengaturan',

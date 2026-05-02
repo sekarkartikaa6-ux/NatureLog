@@ -45,8 +45,4 @@ export class DashboardPage {
   viewDetail(id: string) {
     this.router.navigate(['/tabs/dashboard/detail', id]);
   }
-
-  addNote() {
-    this.router.navigate(['/tabs/dashboard/tambah']);
-  }
 }
