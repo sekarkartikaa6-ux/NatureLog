@@ -57,7 +57,7 @@ export class PencarianPage {
   }
 
   viewDetail(id: string) {
-    this.router.navigate(['/tabs/dashboard/detail', id]);
+    this.router.navigate(['/tabs/pencarian/detail', id]);
   }
 
   addNote() {

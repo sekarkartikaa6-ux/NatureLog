@@ -8,11 +8,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'dashboard',
+        path: 'pencarian',
         children: [
           {
             path: '',
-            loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule)
+            loadChildren: () => import('../pencarian/pencarian.module').then(m => m.PencarianPageModule)
           },
           {
             path: 'tambah',
@@ -29,25 +29,12 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'pencarian',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../pencarian/pencarian.module').then(m => m.PencarianPageModule)
-          },
-          {
-            path: 'tambah',
-            loadChildren: () => import('../tambah/tambah.module').then(m => m.TambahPageModule)
-          }
-        ]
-      },
-      {
         path: 'pengaturan',
         loadChildren: () => import('../pengaturan/pengaturan.module').then(m => m.PengaturanPageModule)
       },
       {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'pencarian',
         pathMatch: 'full'
       }
     ]
