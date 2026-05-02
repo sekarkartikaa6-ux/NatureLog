@@ -63,7 +63,7 @@ export class TambahPage {
   async saveNote() {
     if (!this.title.trim() || !this.location.trim() || !this.category) {
       const toast = await this.toastCtrl.create({
-        message: 'Mohon isi Nota, Lokasi, dan Kategori!',
+        message: 'Mohon isi Judul, Lokasi, dan Kategori!',
         duration: 2000,
         color: 'warning',
         position: 'top'

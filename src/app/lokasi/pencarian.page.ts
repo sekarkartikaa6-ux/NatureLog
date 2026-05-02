@@ -18,7 +18,6 @@ export class PencarianPage {
     { name: 'Hutan', icon: 'leaf-outline', color: '#2E7D32' },
     { name: 'Gunung', icon: 'triangle-outline', color: '#4CAF50' },
     { name: 'Pantai', icon: 'water-outline', color: '#FF9800' },
-    { name: 'Cuaca', icon: 'partly-sunny-outline', color: '#9C27B0' },
     { name: 'Air Terjun', icon: 'water-outline', color: '#03A9F4' },
     { name: 'Danau', icon: 'fish-outline', color: '#2196F3' },
     { name: 'Lainnya', icon: 'ellipsis-horizontal-outline', color: '#9E9E9E' },

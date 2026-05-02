@@ -23,7 +23,6 @@ export class NatureNoteService {
     'Air Terjun': '#03A9F4',
     'Danau': '#2196F3',
     'Pantai': '#FF9800',
-    'Cuaca': '#9C27B0',
     'Lainnya': '#9E9E9E'
   };
 
@@ -82,7 +81,7 @@ export class NatureNoteService {
   }
 
   getCategories(): string[] {
-    return ['Gunung', 'Hutan', 'Air Terjun', 'Danau', 'Pantai', 'Cuaca', 'Lainnya'];
+    return ['Gunung', 'Hutan', 'Air Terjun', 'Danau', 'Pantai', 'Lainnya'];
   }
 
   generateId(): string {
