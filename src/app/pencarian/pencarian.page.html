@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>
+      <div class="header-title">
+        <ion-icon name="search"></ion-icon>
+        Pencarian
+      </div>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary" class="search-toolbar">
+    <ion-searchbar
+      placeholder="Cari judul atau lokasi..."
+      [(ngModel)]="searchQuery"
+      (ionInput)="onSearch()"
+      [debounce]="300"
+      mode="ios">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="filter-container">
+    <div class="category-filters">
+      <div
+        *ngFor="let cat of categoryFilters"
+        class="filter-item"
+        [class.active]="selectedCategory === cat.name"
+        (click)="selectCategory(cat.name)">
+        <div class="filter-icon" [style.background-color]="selectedCategory === cat.name ? cat.color : '#e0e0e0'">
+          <ion-icon [name]="cat.icon" [style.color]="selectedCategory === cat.name ? '#fff' : '#666'"></ion-icon>
+        </div>
+        <small [style.color]="selectedCategory === cat.name ? cat.color : '#888'">{{ cat.name }}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes-container">
+    <div class="note-card" *ngFor="let note of filteredNotes" (click)="viewDetail(note.id)">
+      <div class="card-image">
+        <img *ngIf="note.imagePath" [src]="note.imagePath" alt="">
+        <div *ngIf="!note.imagePath" class="card-image-placeholder">
+          <ion-icon name="image-outline"></ion-icon>
+        </div>
+        <span class="category-badge" [style.background-color]="getCategoryColor(note.category)">
+          {{ note.category }}
+        </span>
+      </div>
+      <div class="card-content">
+        <h3>{{ note.title }}</h3>
+        <p class="location">Lokasi: {{ note.location }}</p>
+        <p class="date">Tanggal: {{ formatDate(note.date) }}</p>
+        <p class="description">{{ note.description }}</p>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="filteredNotes.length === 0">
+      <ion-icon name="search-outline"></ion-icon>
+      <h3>Tidak ada hasil</h3>
+      <p>Coba kata kunci atau kategori lain</p>
+    </div>
+  </div>
+</ion-content>

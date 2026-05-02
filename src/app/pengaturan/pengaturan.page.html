@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>
+      <div class="header-title">
+        <ion-icon name="settings"></ion-icon>
+        Pengaturan
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="settings-container">
+    <div class="app-info-card">
+      <div class="app-logo">
+        <ion-icon name="leaf"></ion-icon>
+      </div>
+      <h2>NatureLog</h2>
+      <p class="subtitle">Catatan Alam</p>
+      <p class="version">Versi 1.0.0 — UTS Edition</p>
+    </div>
+
+    <ion-list lines="full" class="settings-list">
+      <ion-list-header>
+        <ion-label>Data</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-icon name="document-text-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Jumlah Catatan</h3>
+          <p>{{ getNoteCount() }} catatan tersimpan</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="server-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Penyimpanan</h3>
+          <p>Local Storage (Browser)</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item button (click)="clearAllData()" detail>
+        <ion-icon name="trash-outline" slot="start" color="danger"></ion-icon>
+        <ion-label color="danger">
+          <h3>Hapus Semua Data</h3>
+          <p>Menghapus semua catatan tersimpan</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list lines="full" class="settings-list">
+      <ion-list-header>
+        <ion-label>Tentang</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-icon name="code-slash-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Framework</h3>
+          <p>Ionic 8 + Angular 20</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="phone-portrait-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Platform</h3>
+          <p>Capacitor (Cross-platform)</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="information-circle-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Deskripsi</h3>
+          <p>Aplikasi jurnal digital untuk pecinta alam. Dokumentasikan perjalanan Anda ke berbagai ekosistem.</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

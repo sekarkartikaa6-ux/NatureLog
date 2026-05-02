@@ -1,0 +1,96 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/tabs/dashboard/detail/' + noteId" text="Kembali"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Catatan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-container">
+
+    <div class="form-group">
+      <ion-label class="form-label">Nota</ion-label>
+      <ion-input
+        [(ngModel)]="title"
+        placeholder="Judul catatan..."
+        fill="outline"
+        class="form-input">
+      </ion-input>
+    </div>
+
+    <div class="form-group">
+      <ion-label class="form-label">Lokasi/Tempat</ion-label>
+      <ion-input
+        [(ngModel)]="location"
+        placeholder="Lokasi/Tempat"
+        fill="outline"
+        class="form-input">
+      </ion-input>
+    </div>
+
+    <div class="form-group">
+      <ion-label class="form-label">Kategori</ion-label>
+      <div class="category-chips">
+        <span
+          *ngFor="let cat of categories"
+          class="category-chip"
+          [class.selected]="category === cat"
+          [style.background-color]="category === cat ? getCategoryColor(cat) : 'transparent'"
+          [style.border-color]="getCategoryColor(cat)"
+          [style.color]="category === cat ? '#fff' : getCategoryColor(cat)"
+          (click)="category = cat">
+          {{ cat }}
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <ion-label class="form-label">Cuaca</ion-label>
+      <div class="weather-options">
+        <div
+          *ngFor="let w of weatherOptions"
+          class="weather-btn"
+          [class.selected]="weather === w.name"
+          (click)="selectWeather(w.name)">
+          <ion-icon [name]="w.icon"></ion-icon>
+          <small>{{ w.name }}</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <ion-label class="form-label">Deskripsi</ion-label>
+      <ion-textarea
+        [(ngModel)]="description"
+        placeholder="Deskripsi"
+        fill="outline"
+        [autoGrow]="true"
+        [rows]="4"
+        class="form-input">
+      </ion-textarea>
+    </div>
+
+    <div class="form-group">
+      <ion-label class="form-label">Ambil Gambar</ion-label>
+      <div class="image-upload">
+        <div *ngIf="imagePath" class="image-preview">
+          <img [src]="imagePath" alt="Preview">
+          <ion-button fill="clear" color="danger" size="small" (click)="removeImage()">
+            <ion-icon name="close-circle"></ion-icon>
+          </ion-button>
+        </div>
+        <div *ngIf="!imagePath" class="upload-btn" (click)="fileInput.click()">
+          <ion-icon name="camera-outline" size="large"></ion-icon>
+          <small>Pilih Gambar</small>
+        </div>
+        <input type="file" accept="image/*" (change)="onImageSelected($event)" #fileInput hidden>
+      </div>
+    </div>
+
+    <ion-button expand="block" color="primary" class="save-btn" (click)="updateNote()">
+      Perbarui Catatan
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/dashboard" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>NatureLog</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="note">
+  <div class="detail-container">
+    <div class="detail-image">
+      <img *ngIf="note.imagePath" [src]="note.imagePath" alt="">
+      <div *ngIf="!note.imagePath" class="detail-image-placeholder">
+        <ion-icon name="image-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div class="detail-info">
+      <h1>{{ note.title }}</h1>
+      <span class="category-badge" [style.background-color]="getCategoryColor(note.category)">
+        {{ note.category }}
+      </span>
+
+      <div class="meta-info">
+        <p><ion-icon name="location-outline"></ion-icon> Lokasi: {{ note.location }}</p>
+        <p><ion-icon name="calendar-outline"></ion-icon> Tanggal: {{ formatDate(note.date) }}</p>
+        <p *ngIf="note.weather"><ion-icon name="partly-sunny-outline"></ion-icon> Cuaca: {{ note.weather }}</p>
+      </div>
+
+      <div class="detail-description">
+        <p>{{ note.description }}</p>
+      </div>
+
+      <div class="action-buttons">
+        <ion-button fill="outline" color="primary" (click)="editNote()">
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+          Edit Catatan
+        </ion-button>
+        <ion-button fill="outline" color="danger" (click)="deleteNote()">
+          <ion-icon name="trash-outline" slot="start"></ion-icon>
+          Hapus Catatan
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

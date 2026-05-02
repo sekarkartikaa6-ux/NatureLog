@@ -1,0 +1,79 @@
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.search-toolbar {
+  --padding-top: 0;
+  --padding-bottom: 8px;
+
+  ion-searchbar {
+    --background: rgba(255,255,255,0.9);
+    --border-radius: 12px;
+    --box-shadow: none;
+    --placeholder-color: #999;
+    --icon-color: #999;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+}
+
+.filter-container {
+  background: #fff;
+  padding: 14px 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.category-filters {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 0 8px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  min-width: 56px;
+
+  .filter-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+
+  small {
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &.active .filter-icon {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+  }
+}
+
+.notes-container {
+  padding: 16px;
+}

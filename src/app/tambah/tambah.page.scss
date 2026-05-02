@@ -1,0 +1,149 @@
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  --background: #fff;
+  --border-radius: 10px;
+  font-size: 14px;
+}
+
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-chip {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.selected {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+}
+
+.weather-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.weather-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  ion-icon {
+    font-size: 22px;
+    color: #666;
+  }
+
+  small {
+    font-size: 9px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  &.selected {
+    border-color: #00897B;
+    background: #e0f2f1;
+
+    ion-icon {
+      color: #00897B;
+    }
+
+    small {
+      color: #00897B;
+      font-weight: 600;
+    }
+  }
+}
+
+.image-upload {
+  .upload-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    background: #fafafa;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    ion-icon {
+      color: #999;
+    }
+
+    small {
+      color: #999;
+      margin-top: 4px;
+    }
+
+    &:hover {
+      border-color: #00897B;
+    }
+  }
+
+  .image-preview {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    ion-button {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      --padding-start: 4px;
+      --padding-end: 4px;
+
+      ion-icon {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.save-btn {
+  margin-top: 24px;
+  --border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  height: 48px;
+}

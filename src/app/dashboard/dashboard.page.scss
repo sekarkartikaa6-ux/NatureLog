@@ -1,0 +1,30 @@
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.search-toolbar {
+  --padding-top: 0;
+  --padding-bottom: 8px;
+
+  ion-searchbar {
+    --background: rgba(255,255,255,0.9);
+    --border-radius: 12px;
+    --box-shadow: none;
+    --placeholder-color: #999;
+    --icon-color: #999;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+}
+
+.notes-container {
+  padding: 16px;
+}
+
+ion-fab-button {
+  --box-shadow: 0 4px 16px rgba(76,175,80,0.4);
+}
