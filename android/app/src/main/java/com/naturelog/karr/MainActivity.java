@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.naturelog.karr;
 
 import com.getcapacitor.BridgeActivity;
 
