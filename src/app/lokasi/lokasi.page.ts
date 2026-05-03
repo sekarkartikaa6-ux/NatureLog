@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 import { NatureNoteService, NatureNote } from '../services/nature-note.service';
 
 @Component({
-  selector: 'app-pencarian',
-  templateUrl: 'pencarian.page.html',
-  styleUrls: ['pencarian.page.scss'],
+  selector: 'app-lokasi',
+  templateUrl: 'lokasi.page.html',
+  styleUrls: ['lokasi.page.scss'],
   standalone: false,
 })
-export class PencarianPage {
+export class LokasiPage {
   searchQuery = '';
   selectedCategory = 'Semua';
   filteredNotes: NatureNote[] = [];

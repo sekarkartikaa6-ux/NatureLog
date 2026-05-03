@@ -12,7 +12,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../lokasi/pencarian.module').then(m => m.PencarianPageModule)
+            loadChildren: () => import('../lokasi/lokasi.module').then(m => m.LokasiPageModule)
           },
           {
             path: 'tambah',
